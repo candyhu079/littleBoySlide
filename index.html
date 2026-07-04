@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小朋友溜滑梯</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #1e293b;
+        overflow: hidden;
+        height: 100%;
+        font-family: system-ui, sans-serif;
+      }
+      #app {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      #board {
+        position: relative;
+      }
+      canvas {
+        display: block;
+        background: #bfe3ff;
+        touch-action: none;
+        cursor: default;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        background: rgba(15, 23, 42, 0.72);
+        color: #f8fafc;
+        text-align: center;
+      }
+      .overlay.hidden {
+        display: none;
+      }
+      .overlay h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      .overlay p {
+        margin: 0;
+        font-size: 18px;
+      }
+      .overlay button {
+        padding: 10px 28px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: none;
+        background: #fde047;
+        color: #1e293b;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .overlay button:hover {
+        background: #facc15;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="board">
+        <canvas id="game-canvas"></canvas>
+        <div id="menu-overlay" class="overlay">
+          <h1>小朋友溜滑梯</h1>
+          <p>拖曳下方零件，接上滑梯讓小朋友一直往下溜！</p>
+          <button id="start-button">開始遊戲</button>
+        </div>
+        <div id="game-over-overlay" class="overlay hidden">
+          <h1>掉下去了！</h1>
+          <p id="final-score"></p>
+          <p id="final-high-score"></p>
+          <button id="restart-button">再玩一次</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
