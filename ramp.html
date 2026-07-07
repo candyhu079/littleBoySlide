@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小朋友下樓梯</title>
+  <title>小朋友造路（造路模式）</title>
   <style>
     html, body {
       margin: 0;
@@ -17,39 +17,23 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
     }
-    h1 {
-      margin: 8px 0 0;
-      font-size: 22px;
-      letter-spacing: 2px;
-    }
-    #hud {
-      font-size: 18px;
-    }
-    #hud b {
-      color: #ffd54a;
-    }
-    /* Canvas 用邊框框住，外觀清楚 */
+    h1 { margin: 8px 0 0; font-size: 20px; letter-spacing: 2px; }
     #game {
       background: #0f1530;
       border: 3px solid #3a4a82;
       border-radius: 8px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      cursor: crosshair;
     }
-    #hint {
-      font-size: 14px;
-      color: #9fb0e0;
-      margin-bottom: 12px;
-    }
+    #hint { font-size: 13px; color: #9fb0e0; margin-bottom: 12px; text-align: center; }
   </style>
 </head>
 <body>
-  <h1>小朋友下樓梯</h1>
-  <div id="hud">分數：<b id="score">0</b></div>
-  <canvas id="game" width="360" height="560"></canvas>
-  <div id="hint">用 ← → 或 A / D 左右移動。掉出底部就結束了！</div>
-
-  <script src="game.js"></script>
+  <h1>小朋友造路</h1>
+  <canvas id="game" width="460" height="800"></canvas>
+  <div id="hint">小朋友會自己滑！在缺口點一下放斜板（右側佇列依序取用），幫他把路接起來。</div>
+  <script src="ramp.js"></script>
 </body>
 </html>
